@@ -1,9 +1,10 @@
-package qw.springfamework.repositories;
+package qw.springfamework.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import qw.springfamework.api.v1.mapper.CategoryMapper;
 import qw.springfamework.api.v1.model.CategoryDTO;
+import qw.springfamework.repositories.CategoryRepository;
 import qw.springfamework.services.CategoryService;
 
 import java.util.List;

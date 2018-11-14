@@ -8,6 +8,7 @@ import qw.springfamework.api.v1.mapper.CategoryMapper;
 import qw.springfamework.api.v1.model.CategoryDTO;
 import qw.springfamework.domain.Category;
 import qw.springfamework.services.CategoryService;
+import qw.springfamework.services.CategoryServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;
