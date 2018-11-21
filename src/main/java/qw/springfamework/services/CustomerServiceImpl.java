@@ -3,6 +3,7 @@ package qw.springfamework.services;
 import org.springframework.stereotype.Service;
 import qw.springfamework.api.v1.mapper.CustomerMapper;
 import qw.springfamework.api.v1.model.CustomerDTO;
+import qw.springfamework.domain.Customer;
 import qw.springfamework.repositories.CustomerRepository;
 
 import java.util.List;
@@ -40,5 +41,15 @@ public class CustomerServiceImpl implements CustomerService {
                     return customerDTO;
                 })
                 .orElseThrow(RuntimeException::new); //todo implement better exception handling
+    }
+
+    @Override
+    public CustomerDTO createCustomer(CustomerDTO customerDTO) {
+        Customer customer = customerMapper.customerDtoToCustomer(customerDTO);
+        Customer savedCustomer = customerRepository.save(customer);
+        CustomerDTO returnedDTO = customerMapper.customerToCustomerDTO(savedCustomer);
+        returnedDTO.setCustomerUrl("/api/v1/customer/" + savedCustomer.getId());
+
+        return returnedDTO;
     }
 }
