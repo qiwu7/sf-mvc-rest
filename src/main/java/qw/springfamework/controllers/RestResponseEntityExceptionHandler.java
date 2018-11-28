@@ -1,4 +1,4 @@
-package qw.springfamework.controllers.v1;
+package qw.springfamework.controllers;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

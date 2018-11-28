@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import qw.springfamework.api.v1.model.CustomerDTO;
+import qw.springfamework.controllers.RestResponseEntityExceptionHandler;
 import qw.springfamework.services.CustomerService;
 import qw.springfamework.services.ResourceNotFoundException;
 
@@ -16,7 +17,6 @@ import java.util.Arrays;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.verify;

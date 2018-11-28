@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import qw.springfamework.api.v1.model.CategoryDTO;
+import qw.springfamework.controllers.RestResponseEntityExceptionHandler;
 import qw.springfamework.services.CategoryService;
 import qw.springfamework.services.ResourceNotFoundException;
 
