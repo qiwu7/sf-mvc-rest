@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import qw.springfamework.api.v1.mapper.CustomerMapper;
 import qw.springfamework.api.v1.model.CustomerDTO;
+import qw.springfamework.controllers.v1.CustomerController;
 import qw.springfamework.domain.Customer;
 import qw.springfamework.repositories.CustomerRepository;
 
@@ -78,7 +79,7 @@ public class CustomerServiceImplTest {
         CustomerDTO savedDto = customerService.createCustomer(customerDTO);
         //then
         assertEquals(customerDTO.getFirstName(), savedDto.getFirstName());
-        assertEquals("/api/v1/customer/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDto.getCustomerUrl());
     }
 
     @Test
@@ -95,7 +96,7 @@ public class CustomerServiceImplTest {
         CustomerDTO savedDto = customerService.saveCustomerByDTO(1L, customerDTO);
         //then
         assertEquals(customerDTO.getFirstName(), savedDto.getFirstName());
-        assertEquals("/api/v1/customer/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDto.getCustomerUrl());
     }
 
     @Test
