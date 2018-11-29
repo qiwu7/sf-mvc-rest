@@ -1,5 +1,7 @@
 package qw.springfamework.controllers.v1;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import qw.springfamework.api.v1.model.CustomerDTO;
 import qw.springfamework.api.v1.model.CustomerListDTO;
 import qw.springfamework.services.CustomerService;
 
+@Api(description = "This is my Customer Controller")
 @RestController
 @RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {
@@ -22,6 +25,7 @@ public class CustomerController {
         this.customerService = customerService1;
     }
 
+    @ApiOperation(value = "This will get a list of customers", notes = "These are some notes about the API")
     @GetMapping
     public CustomerListDTO getListofCustomers(){
         return new CustomerListDTO(customerService.getAllCustomers());
